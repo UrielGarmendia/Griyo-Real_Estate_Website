@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
 }
 
 .hero {
@@ -9,7 +11,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
   padding: 0 5%;
@@ -26,5 +28,43 @@ header {
   color: white;
   padding: 20px 5%;
   z-index: 10;
-  border-bottom: 2px white solid;
+  border-bottom: 0.2px white solid;
+  display: flex;
+  color: #fbffff;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rightbar {
+  display: flex;
+  flex-direction: column;
+}
+
+.rightbar p {
+  font-size: 14px;
+}
+
+.leftbar {
+  display: flex;
+  flex-direction: column;
+}
+
+.leftbar .logo {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  margin-right: 50px;
+  font-size: 15px;
 }
