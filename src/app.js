@@ -33,28 +33,6 @@ setInterval(changeSlide, 8000); // cambiar los segundos a la par que en la anima
 
 btn.addEventListener("mousemove", (e) => {
   const rect = btn.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
-
-  // aplicar gradiente solo cuando el mouse está encima
-  btn.style.backgroundImage = `
-    radial-gradient(
-      circle 100px at ${x}px ${y}px,
-      #000 0%,
-      transparent 80%
-    )
-  `;
-
-  // cambiar color si pasa sobre las letras
-  const el = document.elementFromPoint(e.clientX, e.clientY);
-  if (el === btn) {
-    btn.style.color = "#000";
-  } else {
-    btn.style.color = "#fff";
-  }
-});
-
-btn.addEventListener("mouseleave", () => {
-  btn.style.backgroundImage = "none"; // reset
-  btn.style.color = "#000"; // reset
+  btn.style.setProperty("--x", `${e.clientX - rect.left}px`);
+  btn.style.setProperty("--y", `${e.clientY - rect.top}px`);
 });

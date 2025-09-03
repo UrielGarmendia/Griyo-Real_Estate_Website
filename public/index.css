@@ -96,17 +96,46 @@ header {
 }
 
 .hero-copy .btn {
-  text-decoration: none;
+  position: relative;
+  display: inline-block;
 }
 
 .hero-copy .btn button {
+  position: relative;
   background-color: #fafafa;
   border: none;
   font-size: 1rem;
   font-weight: 500;
   padding: 0.8rem 1.5rem;
   border-radius: 50px;
-  background-image: none;
+  overflow: hidden;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+/* el circulo */
+.hero-copy .btn button::before {
+  content: "";
+  position: absolute;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background: #000;
+  border-radius: 50%;
+  transition: width 0.3s ease, height 0.3s ease;
+  z-index: 0;
+}
+
+.hero-copy .btn button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.hero-copy .btn button:hover {
+  color: #fff;
 }
 
 .progress-container {
