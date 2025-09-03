@@ -6,8 +6,11 @@
   font-style: normal;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .hero {
-  background-image: url("../public/assets/media/plano-de-casa.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -28,7 +31,7 @@ header {
   color: white;
   padding: 20px 5%;
   z-index: 10;
-  border-bottom: 0.2px white solid;
+  border-bottom: 0.2px #e2e2e2b9 solid;
   display: flex;
   color: #fbffff;
   justify-content: space-between;
@@ -53,6 +56,12 @@ header {
   text-decoration: none;
   color: white;
   font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.rightbar .location {
+  margin-bottom: 1rem;
 }
 
 .navbar ul {
@@ -67,4 +76,71 @@ header {
   color: white;
   margin-right: 50px;
   font-size: 15px;
+}
+
+.hero {
+  display: flex;
+  justify-content: flex-start;
+  align-content: space-around;
+}
+
+.hero-copy h1 {
+  font-size: 5.5rem;
+  font-weight: 400;
+  margin-top: 5rem;
+}
+
+.hero-copy p {
+  width: 60%;
+  margin-bottom: 5rem;
+}
+
+.hero-copy .btn {
+  text-decoration: none;
+}
+
+.hero-copy .btn button {
+  background-color: #fafafa;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  background-image: none;
+}
+
+.progress-container {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+}
+
+.progress-bar {
+  width: 60px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar.active::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: white;
+  animation: fill 8s linear forwards; /*los segundos cambian la duracion de la animacion de llenado de barrita*/
+}
+
+@keyframes fill {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }

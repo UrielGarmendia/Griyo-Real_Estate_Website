@@ -6,6 +6,19 @@
     <link rel="stylesheet" href="../public/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- estos links me cargan las img de fondo antes asi que agregar las que se agreguen -->
+    <link
+      rel="preload"
+      as="image"
+      href="../public/assets/media/fondo-casa-1.webp"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="../public/assets/media/fondo-casa-2.webp"
+    />
+    <!----------------------------------------------------------------------------------------->
+
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
@@ -16,7 +29,6 @@
     <header>
       <div class="leftbar">
         <a href="/" class="logo">GRIYO</a>
-        <br />
         <nav class="navbar">
           <ul>
             <li><a href="#home">Home</a></li>
@@ -27,8 +39,7 @@
         </nav>
       </div>
       <div class="rightbar">
-        <p>Main Street Plaza, Downtown Business District</p>
-        <br />
+        <p class="location">Main Street Plaza, Downtown Business District</p>
         <p>+1 (555) 123-4567</p>
       </div>
     </header>
@@ -41,11 +52,25 @@
           aria-label="Casa moderna en un entorno natural"
         ></div>
         <div class="hero-copy">
-          <h1 id="hero-title">Experience / Elevated Living</h1>
+          <h1 id="hero-title">
+            Experience <br />
+            /Elevated <br />
+            Living
+          </h1>
           <p>
-            Soluciones inmobiliarias con diseño sustentable y calidad premium.
+            Luxurious spaces, refined design, personalized services, and modern
+            amenities for a sophisticated, upscale lifestyle
           </p>
-          <p><a href="#about" class="btn">Learn more</a></p>
+          <a href="#about" class="btn"
+            ><button id="btn-about">Learn more</button></a
+          >
+        </div>
+
+        <div class="progress-container" id="progress-container">
+          <!-- poner aca mas divs dependiendo la cantidad de imgs -->
+          <div class="progress-bar"></div>
+          <div class="progress-bar"></div>
+          <!---------------------------------------------------------->
         </div>
       </section>
 
@@ -238,5 +263,6 @@
         <a href="#">Política de Privacidad</a>
       </small>
     </footer>
+    <script src="./app.js"></script>
   </body>
 </html>
