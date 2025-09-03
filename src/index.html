@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="../public/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <!-- estos links me cargan las img de fondo antes asi que agregar las que se agreguen -->
     <link
       rel="preload"
@@ -16,6 +20,16 @@
       rel="preload"
       as="image"
       href="../public/assets/media/fondo-casa-2.webp"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="../public/assets/media/fondo-casa-3.webp"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="../public/assets/media/fondo-casa-4.webp"
     />
     <!----------------------------------------------------------------------------------------->
 
@@ -61,13 +75,15 @@
             Luxurious spaces, refined design, personalized services, and modern
             amenities for a sophisticated, upscale lifestyle
           </p>
-          <a href="#about" class="btn"
-            ><button id="btn-about">Learn more</button></a
-          >
+          <a href="#about" class="btn">
+            <button id="btn-about"><span>Learn more</span></button>
+          </a>
         </div>
 
         <div class="progress-container" id="progress-container">
           <!-- poner aca mas divs dependiendo la cantidad de imgs -->
+          <div class="progress-bar"></div>
+          <div class="progress-bar"></div>
           <div class="progress-bar"></div>
           <div class="progress-bar"></div>
           <!---------------------------------------------------------->
@@ -75,24 +91,30 @@
       </section>
 
       <section id="busqueda" class="search-title">
-        <h2 id="search-title">Buscar propiedades</h2>
-        <form role="search" aria-label="Buscar propiedad por tipo o ubicación">
-          <label for="q">Propiedad o ubicación</label>
+        <form
+          role="search"
+          aria-label="Buscar propiedad por tipo o ubicación"
+          class="search-form"
+        >
+          <label for="q" class="sr-only">Propiedad o ubicación</label>
           <input
             id="q"
             name="q"
             type="search"
-            placeholder="Ej: cabaña, Palermo, 3 ambientes"
+            placeholder="Search Property Or Location"
             required
           />
-          <label for="filtro">Filtro</label>
-          <select id="filtro" name="filtro">
-            <option value="">Todos</option>
-            <option value="venta">Venta</option>
-            <option value="alquiler">Alquiler</option>
-            <option value="novedades">Novedades</option>
-          </select>
-          <button type="submit">Buscar</button>
+
+          <div class="custom-select">
+            <select id="filtro" name="filtro" required>
+              <option value="" disabled selected hidden>Filter</option>
+              <option value="venta">Venta</option>
+              <option value="alquiler">Alquiler</option>
+              <option value="novedades">Novedades</option>
+            </select>
+
+            <i class="fa-solid fa-sliders"></i>
+          </div>
         </form>
       </section>
 
